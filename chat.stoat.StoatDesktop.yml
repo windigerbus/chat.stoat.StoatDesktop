@@ -1,0 +1,43 @@
+app-id: chat.stoat.StoatDesktop
+runtime: org.freedesktop.Platform
+runtime-version: '25.08'
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '25.08'
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.node24
+command: /app/bin/stoat-desktop
+separate-locales: false
+finish-args:
+- --share=ipc
+- --socket=x11
+- --socket=pulseaudio
+- --device=all
+- --share=network
+- --filesystem=xdg-documents:ro
+- --filesystem=xdg-pictures:ro
+- --filesystem=xdg-videos:ro
+
+- --talk-name=org.kde.StatusNotifierWatcher
+
+- --env=ELECTRON_OZONE_PLATFORM_HINT=auto
+- --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
+build-options:
+  append-path: /usr/lib/sdk/node24/bin
+  env:
+    NPM_CONFIG_LOGLEVEL: info
+modules:
+  - name: stoat-desktop
+    buildsystem: simple
+    build-commands:
+      - cp -a stoat-desktop /app/
+      - install -Dm775 stoat-desktop.sh /app/bin/stoat-desktop
+    sources:
+      - type: archive
+        url: https://github.com/stoatchat/for-desktop/releases/download/v1.1.11/Stoat-linux-x64-1.1.11.zip
+        sha256: 0f352cb4f1c6dc99ad438f789ee545151882d70f7e68e1b90a6679038854c050
+        dest: stoat-desktop
+      - type: script
+        dest-filename: stoat-desktop.sh
+        commands:
+        - zypak-wrapper /app/stoat-desktop/stoat-desktop "$@"
