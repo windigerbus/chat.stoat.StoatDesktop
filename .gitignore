@@ -5,3 +5,5 @@ Stoat-linux-*
 builddir
 repo
 icon*
+export
+*.flatpak
