@@ -1,18 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>chat.stoat.StoatChat</id>
-  
+  <id>chat.stoat.StoatDesktop</id>
+
   <name>Stoat</name>
-  <summary>Stoat is an open-source, user-first chat platform.</summary>
-  
+  <summary>Stoat is an open-source, user-first chat platform</summary>
+
+
+
+  <url type="bugtracker">https://github.com/stoatchat/for-desktop/issues/</url>
+  <url type="homepage">https://stoat.chat/</url>
+  <url type="donation">https://wiki.revolt.chat/notes/project/financial-support/</url>
+  <url type="contact">https://support.stoat.chat/contact</url>
+  <url type="faq">https://support.stoat.chat/</url>
+  <url type="translate">https://translate.stoat.chat/</url>
+  <url type="contribute">https://developers.stoat.chat/</url>
+  <url type="vcs-browser">https://github.com/stoatchat/for-desktop/</url>
+
+
+
+
   <metadata_license>MIT</metadata_license>
   <project_license>AGPL-3.0-only</project_license>
-  
+
   <description>
     <p>
       Stoat is one of the best ways to stay connected with your friends and community without sacrificing any usability. We focus only on the user, and you can be sure that your conversations are confidential and your data is secure.
     </p>
   </description>
-  
-  <launchable type="desktop-id">chat.stoat.StoatChat.desktop</launchable>
+
+  <launchable type="desktop-id">chat.stoat.StoatDesktop.desktop</launchable>
+  <releases>
+    <release version="1.1.12" date="2025-12-29">
+      <url type="details">https://example.org/changelog.html#version_1.0.1</url>
+      <description>
+        <p>Release description</p>
+          <ul>
+            <li>add NixOS compatibility for electron startup</li>
+            <li>correctly load badge count; expose to renderer</li>
+            <li>event listener accumulation from rpc client</li>
+            <li>macos: tray icon size</li>
+            <li>rpc should define largeImageText</li>
+            <li>use the correct argument for auto start</li>
+          </ul>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.0">
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-info">mild</content_attribute>
+    <content_attribute id="social-audio">intense</content_attribute>
+  </content_rating>
 </component>
