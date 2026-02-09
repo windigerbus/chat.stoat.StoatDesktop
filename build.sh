@@ -1,2 +1,2 @@
-flatpak-builder build ./chat.stoat.StoatDesktop.yml --install-deps-from=flathub --force-clean --user --install
-flatpak build-bundle export chat.stoat.StoatDesktop.flatpak chat.stoat.StoatDesktop --runtime-repo=https://flathub.org/repo/flathub.flatpakrepo
+flatpak-builder --force-clean --user --install-deps-from=flathub --repo=repo --install builddir chat.stoat.StoatDesktop.yml
+flatpak build-bundle repo chat.stoat.StoatDesktop.flatpak chat.stoat.StoatDesktop --runtime-repo=https://flathub.org/repo/flathub.flatpakrepo
