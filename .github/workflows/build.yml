@@ -3,11 +3,12 @@ on:
   - cron: "0 2 * * *"
   push:
     branches:
-    - master
+    - main
   workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
     - run: |
         ./build.sh
