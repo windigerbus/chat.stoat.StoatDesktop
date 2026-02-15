@@ -11,4 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: |
+        sudo apt-get install flatpak flatpak-builder flatpak-devel -y
+        flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
         ./build.sh
